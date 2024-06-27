@@ -10,7 +10,32 @@ import FilteredImage from "../components/FilteredImage";
 function LoginPage({navigation}) {
     const [loading, setLoading] = useState(true);
     const [data,  setData] = useState<User | undefined>(undefined);
+
+    useEffect(() => {
+        handleLoad()
+    }, [])
+
+    useEffect(() => {
+        console.log({data})
+
+    }, [data])
+
+    const handleLoad = async () => {
+        setLoading(true)
+        const _data = await demoService()
+        setData(_data)
+        setLoading(false)
+    };
+
+    if(loading || !data){
+        return (
+            <View style={styles.mainContainer}>
+                <ActivityIndicator/>
+            </View>
+        );
+    }
     
+
     return (
         <View style={styles.mainContainer}>
             <View style={styles.loginContainer}>
@@ -20,9 +45,6 @@ function LoginPage({navigation}) {
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {navigation.navigate("Map")}}>
                     <Text style={styles.loginText}>Mapa wey</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => {navigation.navigate("Chat")}}>
-                    <Text style={styles.loginText}>Lecha</Text>
                 </TouchableOpacity>
 
                 <FilteredImage/>

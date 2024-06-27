@@ -10,8 +10,7 @@ function Router() {
 
   return (
     <NavigationContainer>
-      {/* {demo.user != undefined ? <AppStack /> : <AuthStack />} */}
-      <AppStack />
+      {demo.user != undefined ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 }

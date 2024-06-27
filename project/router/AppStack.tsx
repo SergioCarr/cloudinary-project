@@ -6,7 +6,6 @@ import LogoutButton from "../components/LogoutButton";
 import { BatteryLevel } from "../components/BatteryLevel";
 import CameraPage from "../pages/CameraPage";
 import MapPage from "../pages/MapPage";
-import ChatPage from "../pages/ChatPage";
 
 const Stack = createNativeStackNavigator();
 function AppStack() {
@@ -26,10 +25,6 @@ function AppStack() {
       <Stack.Screen
         name="Map"
         component={MapPage}
-      />
-      <Stack.Screen
-        name="Chat"
-        component={ChatPage}
       />
     </Stack.Navigator>
   );
