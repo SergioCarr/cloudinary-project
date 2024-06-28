@@ -65,9 +65,9 @@ export default function CameraPage() {
   async function uploadImageToCloudinarySDK(uri: String) {
     const cld = new Cloudinary({
       cloud: {
-        cloudName: "dpjwt3wc0",
-        apiKey: "924747896266865",
-        apiSecret: "JD8svlGklQSgx3Tw9DsqMJDrPIU",
+        cloudName: "dttc4c0s5",
+        apiKey: "787165235955262",
+        apiSecret: "-tKrrgc8Hkphik5kbI0jkrim3KI",
 
       },
       url: {
@@ -76,8 +76,8 @@ export default function CameraPage() {
     });
 
     const options: UploadApiOptions = {
-      upload_preset: "ml_default",
-      public_id: "wachumaralavaquita",
+      upload_preset: "preset_chido",
+      public_id: "idChida",
     };
 
     console.log(uri);
@@ -96,9 +96,9 @@ export default function CameraPage() {
     const formData = new FormData();
     const public_id = Crypto.randomUUID();
     formData.append("file", base64Image, "file");
-    formData.append("upload_preset", "<YOUR_UPLOAD_PRESET>");
+    formData.append("upload_preset", "preset_chido");
     formData.append("public_id", public_id);
-    const response = await fetch("https://api.cloudinary.com/v1_1/<YOUR_CLOUD_NAME>/image/upload", {
+    const response = await fetch("https://api.cloudinary.com/v1_1/dttc4c0s5/image/upload", {
       method: "POST",
       body: formData,
     }).then((res) => res.json())
